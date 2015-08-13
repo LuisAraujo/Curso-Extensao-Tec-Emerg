@@ -1,0 +1,15 @@
+body {
+
+  overflow-x: hidden;
+  padding-left: 20px;
+  padding-right : 20px;
+  color: #fefefe;
+}
+.starter-template {
+  padding: 20px 50px;
+  text-align: justify;
+}
+
+.starter-template h1{
+    text-align: center;
+}

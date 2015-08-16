@@ -1,4 +1,7 @@
+segundos_erro = 6;
+
 /* Change value and text of DropDown by Escolaridade*/
+
 $('.dropdown-menu li').click(function(){
     value =  $(this).text();
     $("#placeholder_escolaridade").text(value);
@@ -6,7 +9,7 @@ $('.dropdown-menu li').click(function(){
 });
 
 
-/*CADASTRO
+/*CADASTRO */
 $("#form_cadastro").validate({
 
      submitHandler: function(form) {
@@ -18,26 +21,25 @@ $("#form_cadastro").validate({
             data: dados,
             success: function(data)
             {
-                if(data=="1"){
-                    cleanForm();
-                    //MSG CADRASTRADO
-                }else if(data=="0"){
-                    cleanForm();
-                    alert("entrou");
-                    //MSG NAO CADASTRADO -> N de vagas >
+                if(data == "1"){
+                    cadastro_sucesso();
+                }else{
+                    cadastro_erro();
+                    conta_refress();
                 }
 
             },
             error: function(data)
             {
-                alert("erro");
+                cadastro_erro();
+                conta_refress();
             }
         });
-        alert("saiu");
+
         return false;
     }
 });
-*/
+
 
 //Limpa formulario inscricao
 cleanForm = function(){
@@ -52,22 +54,35 @@ cleanForm = function(){
 
 };
 
+cadastro_sucesso = function(){
+
+   $("#form_cadastro").html(
+
+       "<div class='nota'>A sua inscrição foi realizada com sucesso! Aguarde a lista dos selecionados " +
+                          "que será publicada nos canais de comunicação.</div>"
+   );
+
+};
+
+cadastro_erro = function(){
+
+    $("#form_cadastro").html(
+
+        "<div class='nota'>Houve um problema na sua inscrição! " +
+            "Sua página será atualizada em <label id='erro_seg'>"+segundos_erro+"</label> segundo(s).</div>"
+    );
+
+}
 
 
-$("#form_cadastro").submit( function(event){
-    console.log("dddd");
-    $.ajax({
-        type: "POST",
-        url: "php/setAluno.php",
-        data: data,
-        success: function(data)
-        {
-            alert(data);
-        },
-        error: function(data)
-        {
-            alert("erro");
-        }
-    });
+conta_refress = function(){
+    if(segundos_erro>0){
+        segundos_erro--;
+        cadastro_erro();
+        setTimeout("conta_refress()", 1000);
+    }else{
+        location.reload();
+    }
 
-});
+
+};

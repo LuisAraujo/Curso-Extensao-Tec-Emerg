@@ -11,5 +11,4 @@ if($bd){
     mysql_select_db($banco, $bd);
 }
 
-
 ?>

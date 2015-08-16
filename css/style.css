@@ -1,0 +1,73 @@
+@font-face {
+    font-family: "Myriad Pro Bold";
+    src: url("../fonts/MyriadPro-Bold.otf"); /* para IE */
+    src: url("../fonts/MyriadPro-Bold.ttf");
+}
+
+@font-face {
+    font-family: "Myriad Pro";
+    src: url("../fonts/MyriadPro-Regular.otf"); /* para IE */
+    src: url("../fonts/MyriadPro-Regular.ttf");
+}
+
+body {
+    background-color: #dd2027;
+    background-image: url("../img/bg.png");
+    background-size: 100%;
+    background-repeat: repeat-y;
+
+    overflow-x: hidden;
+    padding-left: 20px;
+    padding-right : 20px;
+    color: #fefefe;
+    overflow-x: hidden;
+    padding-left: 20px;
+    padding-right : 20px;
+    color: #fefefe;
+}
+
+.starter-template {
+    padding: 20px 50px;
+    text-align: justify;
+}
+
+.starter-template h1{
+    text-align: center;
+}
+
+.starter-template .title-form{
+    text-align: center;
+}
+
+.input-group, .btn{
+    margin-bottom: 20px;
+}
+
+.title-form{
+    font-family: "Myriad Pro Bold";
+    font-size: 50px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.simple-text{
+    font-family: "Myriad Pro";
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+
+
+footer{
+    text-align: center;
+    color:#5f0000;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.4);
+}
+
+
+.glyphicon:hover{
+    color: #5f0000;
+}
+
+.nota{
+    font-size: 12px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}

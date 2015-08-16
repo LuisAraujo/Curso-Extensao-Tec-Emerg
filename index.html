@@ -13,17 +13,15 @@
     <title>Inscrição Tecnologias Emergentes</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="dist/css/bootstrap.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="starter-template.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
 
 	<!-- Styles for this page CETE -->
-    <link href="style.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 	
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="assets/js/ie-emulation-modes-warning.js"></script>
+    <!--[if lt IE 9]>
+      <script src="scripts/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="scripts/ie-emulation-modes-warning.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -44,17 +42,19 @@
             </div> <!-- end internal row -->
 
             <div class="row">
-                <div class="starter-template">
-                    <p>O <b>Curso de Tecncologias Emergentes</b> é destinado à comunidade do IFBA-Santo Amaro e Local (Cidade de Santo Amaro e região).
-                        Este curso tem como objetivo a capacitação em desenvolvimento de software para smartphones, TV digital e jogos para
+                <div class="starter-template simple-text">
+                    <p>O <b>Curso de Tecncologias Emergentes</b> tem como objetivo a capacitação em desenvolvimento de software para smartphones, TV digital e jogos para
                         criação de negócios digitais empreendedores em Santo Amaro e região.
-                        Possui três módulos: <i>Desenvolvimento de Aplicativos Android,
+                        O Curso possui três módulos: <i>Desenvolvimento de Aplicativos Android,
                         Desenvolvimento de Games e Desenvolvimento de TV Digital</i>. Para fazer sua inscrição é necessário se enquadrar em
                         um dos pontos a seguir: <br>
                         <b> a) </b> Ter cursado o primeiro (1º) ano do curso de Técnico em Informática, do IFBA ou Similar.
                         <br> <b> b)</b> Ter concluído o curso de Técnico em Informática (Subsequente ou Integrado), do IFBA ou Similar.
                         <br> <b> c)</b> Ser estudante do Curso de Licenciatura em Computação, ou outro curso superior na área de Computação, e já ter cursado a Disciplina Orientação à Objetos I.
                         <br> <b> d)</b> Ter concluído o curso na área de Computação.
+
+
+
                     </p>
                 </div>
             </div> <!-- end internal row -->
@@ -62,48 +62,57 @@
 
 	    <div class="col-lg-6">
 		  <div class="starter-template">
-			<h1>INSCRIÇÃO</h1>
+			<p class="title-form">INSCRIÇÃO</p>
 
 
               <form id="form_cadastro" role="form" method="post" action="" class="bs-example bs-example-form">
 
 
 
-                  <div class="input-group">
-                      <span class="input-group-addon" id="">Nome</span>
-                      <input  name="nome" type="text" class="form-control" id="nome" placeholder="Seu Nome" required>
+                  <div class="input-group" id="nome_div">
+                      <span class="input-group-addon">
+                          <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                      </span>
+                      <input  name="nome" type="text" class="form-control" id="nome" placeholder="Seu Nome*" required>
                   </div>
 
-                  <div class="input-group">
-                      <span class="input-group-addon" id="">CPF</span>
-                      <input name="cpf" type="cpf" class="form-control" id="cpf" placeholder="000.000.000-00" required>
+                  <div class="input-group" id="cpf_div">
+
+                      <span class="input-group-addon">
+                          <span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span>
+                      </span>
+                      <input name="cpf" type="cpf" class="form-control" id="cpf" placeholder="Seu CPF*" required>
+
+
                   </div>
 
-
-
-                  <div class="input-group">
-                      <span class="input-group-addon" id="sizing-addon2">@</span>
-                      <input name="email" type="email" class="form-control" id="email" aria-describedby="sizing-addon2" placeholder="email@exemplo.com" required>
+                  <div class="input-group" id="email_div">
+                      <span class="input-group-addon" >
+                          <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                      </span>
+                      <input name="email" type="email" class="form-control" id="email" aria-describedby="sizing-addon2" placeholder="email@exemplo.com*" required>
+                  </div>
+                  <!-- IE-->
+                  <div class="input-group" id="instituicao_div">
+                      <span class="input-group-addon">
+                          <span class="glyphicon  glyphicon-book" aria-hidden="true"></span>
+                      </span>
+                      <input name="instituicao" type="text" class="form-control" id="instituicao" placeholder="Instituição de Ensino*" required>
                   </div>
 
-
-
-                  <div class="input-group">
-                      <span class="input-group-addon" id="sizing-addon2">IE</span>
-                      <input name="instituicao" type="text" class="form-control" id="institiicao" placeholder="IFBA" required>
+                  <div class="input-group" id="cidade_div">
+                      <span class="input-group-addon">
+                          <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+                      </span>
+                      <input name="cidade" type="text" class="form-control" id="cidade" placeholder="Sua Cidade*" required>
                   </div>
-
-                  <div class="input-group">
-                      <span class="input-group-addon" id="sizing-addon2">Cidade</span>
-                      <input name="cidade" type="text" class="form-control" id="cidade" placeholder="Santo Amaro" required>
-                  </div>
-
                   <!-- Single button -->
-                  <div class="btn-group">
-                      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Escolaridade <span class="caret"></span>
+                  <div class="btn-group" id="escolaridade_div" style="width: 100%">
+                      <button id="drop_escolaridade"  name="escolaridade" type="button" value="none" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" required>
+                          <span class="glyphicon glyphicon-education" aria-hidden="true"></span> <span id="placeholder_escolaridade">Escolaridade*</span> <span class="caret"></span>
                       </button>
                       <ul class="dropdown-menu">
+                          <li role="presentation" class="dropdown-header">Nível Técnico</li>
                           <li><a href="#">2º Ano TI - IFBA</a></li>
                           <li><a href="#">3º Ano TI - IFBA</a></li>
                           <li><a href="#">4º Ano TI - IFBA</a></li>
@@ -111,33 +120,41 @@
                           <li><a href="#">2º Ano (ou mais) TI - Outra IE</a></li>
                           <li><a href="#">Formado em TI - Outra IE</a></li>
                           <li role="separator" class="divider"></li>
+                          <li role="presentation" class="dropdown-header">Nível Superior</li>
                           <li><a href="#">Licenciatura em Computação - IFBA</a></li>
                           <li><a href="#">Cursando Curso de Computação - Outra IE</a></li>
                           <li><a href="#">Formado em Computação - Outra IE</a></li>
 
                       </ul>
                   </div>
+
+                  <input name="escolaridade" type="hidden" class="form-control" id="escolaridade" required>
+
                   <br>
-                  <button type="submit" class="btn btn-success">Submit</button>
+                  <!-- SUBMIT FORMULARIO -->
+                  <button type="submit" class="btn btn-success">
+                     <h5> <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span> <b>Inscrever </b></h5>
+                  </button>
+
+                  <div class="nota"><br> <b>ATENÇÃO: </b> Dados os critérios de seleção - visando atender toda a comunidade - a inscrição não
+                      garante vaga no curso. A lista dos aprovados será divulgada nos seguintes canais:
+                      Mural do IFBA, site, e-mail.
+
+                  </div>
+
               </form>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 		  </div>
 	</div> <!-- end col -->
 </div> <!-- end row -->
 
+
+
+
+<footer style="">
+    <p>&copy; Desenvolvido por Luis Araujo</p>
+</footer>
 
 	  
 </div>
@@ -146,9 +163,13 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="dist/js/bootstrap.min.js"></script>
+    <script src="scripts/jquery.js"></script>
+<script src="scripts/jquery.validate.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="scripts/ie10-viewport-bug-workaround.js"></script>
+    <!-- Script Especific of this page -->
+    <script src="scripts/main.js"></script>
+
   </body>
 </html>
